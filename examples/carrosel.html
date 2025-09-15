@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- Define o tipo de documento (HTML5) e o idioma da página -->
+<head>
+  <style>
+    /* ---------- ESTILO GERAL DA PÁGINA ---------- */
+    body {
+      background: #f5f5f5;   /* Cor de fundo cinza claro */
+      padding: 30px;         /* Espaçamento interno em volta da página */
+    }
+
+    /* ---------- TÍTULO ---------- */
+    h1 {
+      text-align: center;    /* Centraliza o título */
+      margin-bottom: 20px;   /* Espaço abaixo do título */
+    }
+
+    /* ---------- ÁREA DO CARROSSEL ---------- */
+    .carrossel {
+      display: flex;         /* Coloca os cards lado a lado em linha */
+      gap: 20px;             /* Espaço entre os cards */
+      overflow-x: auto;      /* Ativa a rolagem horizontal */
+      padding: 10px;         /* Espaço interno em volta do carrossel */
+    }
+
+    /* ---------- ESTILO DE CADA CARD ---------- */
+    .card {
+      flex: 0 0 250px;       /* Largura fixa de 250px e não encolhe */
+      height: 150px;         /* Altura fixa */
+      background: white;     /* Fundo branco */
+      border-radius: 10px;   /* Cantos arredondados */
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Sombra para dar efeito de profundidade */
+      display: flex;         /* Flexbox para alinhar conteúdo dentro do card */
+      justify-content: center; /* Centraliza conteúdo na horizontal */
+      align-items: center;   /* Centraliza conteúdo na vertical */
+      font-size: 20px;       /* Tamanho da fonte do texto */
+      font-weight: bold;     /* Deixa o texto em negrito */
+      scroll-snap-align: start; /* Faz o card “grudar” no início quando parar a rolagem */
+    }
+
+    /* ---------- EFEITO QUANDO O MOUSE PASSA POR CIMA ---------- */
+    .card:hover {
+      transform: scale(1.05);          /* Aumenta levemente o tamanho do card */
+      transition: transform 0.3s ease; /* Suaviza a animação do aumento */
+    }
+  </style>
+</head>
+<body>
+  <!-- Título principal da página -->
+  <h1>Carrossel de Cards</h1>
+
+  <!-- Container do carrossel -->
+  <div class="carrossel">
+    <!-- Cards dentro do carrossel -->
+    <div class="card">Card 1</div>
+    <div class="card">Card 2</div>
+    <div class="card">Card 3</div>
+    <div class="card">Card 4</div>
+    <div class="card">Card 5</div>
+    <div class="card">Card 6</div>
+  </div>
+</body>
+</html>

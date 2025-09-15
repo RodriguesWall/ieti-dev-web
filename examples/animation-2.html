@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- Define o tipo de documento (HTML5) e o idioma como português do Brasil -->
+<head>
+  <style>
+    /* ---------- ESTILO GERAL DA PÁGINA ---------- */
+    body {
+      display: flex;                 /* Ativa o flexbox para alinhar elementos */
+      justify-content: center;       /* Centraliza horizontalmente */
+      align-items: center;           /* Centraliza verticalmente */
+      height: 100vh;                 /* Ocupa 100% da altura da tela (viewport height) */
+      background: #f5f5f5;           /* Define um fundo cinza claro */
+    }
+
+    /* ---------- ESTILO DO LOADER (ANIMAÇÃO DE CARREGAMENTO) ---------- */
+    .loader {
+      width: 60px;                   /* Largura do círculo */
+      height: 60px;                  /* Altura do círculo */
+      border: 6px solid #ddd;        /* Cria uma borda grossa cinza clara */
+      border-top: 6px solid #4CAF50; /* A parte de cima da borda é verde (para dar efeito do giro) */
+      border-radius: 50%;            /* Deixa a borda redonda (formando um círculo) */
+      animation: girar 1s linear infinite; /* Aplica a animação "girar", com duração de 1s, repetindo infinitamente */
+    }
+
+    /* ---------- DEFINIÇÃO DA ANIMAÇÃO ---------- */
+    @keyframes girar {
+      0%   { transform: rotate(0deg); }    /* Começa sem rotação */
+      100% { transform: rotate(360deg); }  /* Gira 360 graus (um círculo completo) */
+    }
+  </style>
+</head>
+<body>
+  <!-- Elemento visual do loader -->
+  <div class="loader"></div>
+</body>
+</html>

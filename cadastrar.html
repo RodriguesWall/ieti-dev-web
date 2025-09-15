@@ -43,9 +43,54 @@
 
   <!-- ---------- CONTEÚDO PRINCIPAL ---------- -->
   <main class="container my-5">
-    <h1 class="text-center mb-4">Pagina Inicial</h1>
+    <h1 class="text-center mb-4">Formulário de Cadastro</h1>
 
+    <!-- Formulário centralizado e limitado a 600px de largura -->
+    <form class="mx-auto" style="max-width: 600px;" id="myForm">
+      
+      <!-- Campo: Nome -->
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome completo</label>
+        <input type="text" class="form-control" id="nome" name="nome" required>
+      </div>
 
+      <!-- Campo: Telemóvel -->
+      <div class="mb-3">
+        <label for="telemovel" class="form-label">Telemóvel</label>
+        <input type="tel" class="form-control" id="telemovel" name="telemovel" 
+               pattern="[0-9]{9}" placeholder="912345678" required>
+        <div class="form-text">Digite apenas 9 dígitos.</div>
+      </div>
+
+      <!-- Campo: Email -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+
+      <!-- Campo: Data de nascimento -->
+      <div class="mb-3">
+        <label for="nascimento" class="form-label">Data de nascimento</label>
+        <input type="date" class="form-control" id="nascimento" name="nascimento" required>
+      </div>
+
+      <!-- Campo: Select (Área de interesse) -->
+      <div class="mb-3">
+        <label for="area" class="form-label">Área de interesse</label>
+        <select id="area" name="area" class="form-select" required>
+          <option value="">-- Selecione --</option>
+          <option value="frontend">Frontend</option>
+          <option value="backend">Backend</option>
+          <option value="design">Design</option>
+          <option value="fullstack">Fullstack</option>
+        </select>
+      </div>
+
+      <!-- Botão de envio -->
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+      </div>
+    </form>
   </main>
 
   <!-- ---------- RODAPÉ ---------- -->

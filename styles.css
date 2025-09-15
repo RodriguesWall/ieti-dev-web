@@ -1,19 +1,18 @@
+/* ---------- ESTILO PADRÃO DO AVISO ---------- */
+.aviso {
+  position: fixed;             /* Fixa o aviso na tela, mesmo rolando a página */
+  bottom: 20px;                /* Distância de 20px da parte inferior da tela */
+  right: 20px;                 /* Distância de 20px da lateral direita da tela */
+  background: #4CAF50;         /* Cor de fundo verde (sucesso) */
+  color: white;                /* Texto branco */
+  padding: 15px 20px;          /* Espaçamento interno (vertical 15px, horizontal 20px) */
+  border-radius: 5px;          /* Cantos arredondados */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Sombra para dar destaque */
+  opacity: 0;                  /* Invisível por padrão */
+  transition: opacity 0.5s ease; /* Suaviza a transição quando aparecer/desaparecer */
+}
 
-
- /* Estilo do aviso */
-    .aviso {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #4CAF50;
-      color: white;
-      padding: 15px 20px;
-      border-radius: 5px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      opacity: 0;
-    }
-
-    /* Quando ativo, aparece */
-    .aviso.show {
-      opacity: 1;
-    }
+/* ---------- QUANDO A CLASSE "show" É ADICIONADA ---------- */
+.aviso.show {
+  opacity: 1;                  /* Torna o aviso visível */
+}

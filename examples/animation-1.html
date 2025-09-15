@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- Define o tipo de documento (HTML5) e o idioma da página como português do Brasil -->
+<head>
+  <style>
+    /* ---------- ESTILO GERAL DA PÁGINA ---------- */
+    body {
+      display: flex;                 /* Usa o modelo flexbox para organizar os elementos */
+      justify-content: center;       /* Centraliza o conteúdo horizontalmente */
+      align-items: center;           /* Centraliza o conteúdo verticalmente */
+      height: 100vh;                 /* Define a altura da página como 100% da tela visível */
+      background: #eef;              /* Define a cor de fundo como um tom claro de azul */
+    }
+
+    /* ---------- ESTILO DO BOTÃO ---------- */
+    .btn-animado {
+      background: #2196F3;           /* Cor de fundo azul */
+      color: white;                  /* Texto branco */
+      padding: 15px 30px;            /* Espaçamento interno: 15px em cima/baixo e 30px nas laterais */
+      border: none;                  /* Remove a borda padrão do botão */
+      border-radius: 5px;            /* Deixa os cantos arredondados */
+      cursor: pointer;               /* Cursor vira uma "mãozinha" ao passar por cima */
+      font-size: 18px;               /* Define o tamanho da fonte do texto */
+    }
+    
+    /* ---------- EFEITO QUANDO O MOUSE PASSA POR CIMA ---------- */
+    .btn-animado:hover {
+      background: #45a049;           /* Muda a cor de fundo para verde */
+      transform: scale(1.1);         /* Aumenta levemente o tamanho do botão */
+    }
+
+    /* ---------- EFEITO QUANDO O BOTÃO É CLICADO ---------- */
+    .btn-animado:active {
+      animation: crescer 0.4s ease;  /* Ativa a animação chamada "crescer" por 0.4 segundos */
+    }
+
+    /* ---------- DEFINIÇÃO DA ANIMAÇÃO ---------- */
+    @keyframes crescer {
+      0%   { transform: scale(1); }   /* Começa no tamanho normal */
+      50%  { transform: scale(1.2); } /* Aumenta até 120% do tamanho original */
+      100% { transform: scale(1); }   /* Volta ao tamanho normal */
+    }
+  </style>
+</head>
+<body>
+  <!-- Botão com a classe "btn-animado", que aplicará os estilos e animações definidos acima -->
+  <button class="btn-animado">Clique aqui</button>
+</body>
+</html>

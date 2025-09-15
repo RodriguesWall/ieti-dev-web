@@ -1,5 +1,6 @@
    // 1. Seleciona o formulário
     const form = document.getElementById("myForm");
+    const aviso = document.getElementById("aviso");
 
     // 2. Escuta o evento de submit
     form.addEventListener("submit", function(event) {
@@ -7,7 +8,6 @@
 
       // 3. Captura os dados
       const nome = form.nome.value;
-      const email = form.email.value;
 
       // Atualiza o texto do aviso
       aviso.textContent = `Obrigado, ${nome}! Seu formulário foi enviado.`;

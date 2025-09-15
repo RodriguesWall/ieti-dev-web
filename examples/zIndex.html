@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- Documento HTML5, idioma definido como português do Brasil -->
+<head>
+  <style>
+    /* ---------- ESTILO GERAL DA PÁGINA ---------- */
+    body {
+      font-family: Arial, sans-serif; /* Fonte usada no texto */
+      padding: 40px;                 /* Espaçamento interno da página */
+    }
+
+    /* ---------- ÁREA DO CONTAINER ---------- */
+    .container {
+      position: relative;            /* Define que os elementos dentro terão posição relativa a este container */
+      width: 300px;                  /* Largura da área do container */
+      height: 200px;                 /* Altura da área do container */
+      border: 2px dashed #333;       /* Borda tracejada para visualizar os limites */
+    }
+
+    /* ---------- ESTILO DAS CAIXAS ---------- */
+    .box {
+      width: 150px;                  /* Largura fixa da caixa */
+      height: 100px;                 /* Altura fixa da caixa */
+      position: absolute;            /* Permite posicionar em relação ao container */
+      top: 50px;                     /* Distância de 50px do topo do container */
+      left: 50px;                    /* Distância de 50px da esquerda do container */
+      display: flex;                 /* Flexbox para centralizar o texto */
+      align-items: center;           /* Centraliza o texto verticalmente */
+      justify-content: center;       /* Centraliza o texto horizontalmente */
+      color: white;                  /* Texto branco */
+      font-weight: bold;             /* Texto em negrito */
+    }
+
+    /* ---------- DIFERENÇAS ENTRE AS CAIXAS ---------- */
+    .z1 { background: #4CAF50; z-index: 1; }   /* Caixa verde, atrás das outras */
+    .z2 { background: #2196F3; left: 80px; z-index: 2; } /* Caixa azul, deslocada e acima da verde */
+    .z3 { background: #FF9800; left: 110px; z-index: 3; } /* Caixa laranja, deslocada mais à frente e sobre todas */
+  </style>
+</head>
+<body>
+  <!-- Título -->
+  <h2>Exemplo Z-index</h2>
+
+  <!-- Container das caixas -->
+  <div class="container">
+    <div class="box z1">z-index 1</div> <!-- Caixa verde (atrás) -->
+    <div class="box z2">z-index 2</div> <!-- Caixa azul (meio) -->
+    <div class="box z3">z-index 3</div> <!-- Caixa laranja (na frente) -->
+  </div>
+
+  <!-- Explicação -->
+  <p>Caixas sobrepostas: maior <code>z-index</code> fica na frente.</p>
+</body>
+</html>
