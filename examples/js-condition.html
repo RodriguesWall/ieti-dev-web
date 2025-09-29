@@ -1,0 +1,17 @@
+<input id="idade" type="number" placeholder="Digite sua idade">
+<button id="verificar">Verificar</button>
+<p id="resposta"></p>
+
+<script>
+  let verificar = document.getElementById("verificar");
+  let resposta = document.getElementById("resposta");
+
+  verificar.addEventListener("click", function() {
+    let idade = document.getElementById("idade").value;
+    if (idade >= 18) {
+      resposta.textContent = "Você é maior de idade.";
+    } else {
+      resposta.textContent = "Você é menor de idade.";
+    }
+  });
+</script>

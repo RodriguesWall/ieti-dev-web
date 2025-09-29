@@ -1,0 +1,20 @@
+<h2 id="contador">0</h2>
+<button id="mais">+</button>
+<button id="menos">-</button>
+
+<script>
+  let contador = 0;
+  let texto = document.getElementById("contador");
+  let mais = document.getElementById("mais");
+  let menos = document.getElementById("menos");
+
+  mais.addEventListener("click", function() {
+    contador++;
+    texto.textContent = contador;
+  });
+
+  menos.addEventListener("click", function() {
+    contador--;
+    texto.textContent = contador;
+  });
+</script>

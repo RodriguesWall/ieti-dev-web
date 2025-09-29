@@ -1,0 +1,12 @@
+<ul id="lista"></ul>
+
+<script>
+  let frutas = ["Maçã", "Banana", "Uva", "Laranja"];
+  let lista = document.getElementById("lista");
+
+  for (let fruta of frutas) {
+    let li = document.createElement("li");
+    li.textContent = fruta;
+    lista.appendChild(li);
+  }
+</script>

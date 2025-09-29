@@ -1,0 +1,36 @@
+<div id="quiz"></div>
+<button id="resultado">Ver resultado</button>
+<p id="score"></p>
+
+<script>
+  let perguntas = [
+    { pergunta: "Quanto é 2+2?", resposta: "4" },
+    { pergunta: "Capital do Brasil?", resposta: "Brasília" },
+    { pergunta: "Cor do céu em dia claro?", resposta: "Azul" }
+  ];
+
+  let quiz = document.getElementById("quiz");
+
+  // gera perguntas com loop
+  for (let i = 0; i < perguntas.length; i++) {
+    let p = document.createElement("p");
+    p.textContent = perguntas[i].pergunta;
+
+    let input = document.createElement("input");
+    input.id = "pergunta" + i;
+
+    quiz.appendChild(p);
+    quiz.appendChild(input);
+  }
+
+  document.getElementById("resultado").addEventListener("click", function() {
+    let pontos = 0;
+    for (let i = 0; i < perguntas.length; i++) {
+      let resposta = document.getElementById("pergunta" + i).value;
+      if (resposta.toLowerCase() === perguntas[i].resposta.toLowerCase()) {
+        pontos++;
+      }
+    }
+    document.getElementById("score").textContent = "Você acertou " + pontos + "/" + perguntas.length;
+  });
+</script>
