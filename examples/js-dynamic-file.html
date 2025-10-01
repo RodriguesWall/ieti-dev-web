@@ -1,0 +1,24 @@
+<body>
+    <div id="navbar"></div>
+  
+    <main>
+      <h1>Página de Exemplo</h1>
+    </main>
+  
+    <div id="footer"></div>
+  
+    <script src="script.js">
+        // components.js
+        function loadComponent(id, file) {
+        fetch(file)
+            .then(response => response.text())
+            .then(data => {
+            document.getElementById(id).innerHTML = data;
+            });
+        }
+
+        // Carrega a navbar e o footer
+        loadComponent("navbar", "navbar.html");
+    </script>
+  </body>
+  

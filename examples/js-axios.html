@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo Axios</title>
+  <!-- Importando o Axios via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <h2>Exemplo de Request com Axios</h2>
+  <button onclick="buscarPost()">Buscar Post</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function buscarPost() {
+      // Fazendo uma requisição GET para a API JSONPlaceholder
+      axios.get("https://jsonplaceholder.typicode.com/posts/1")
+        .then(function(response) {
+          // Dados recebidos
+          const post = response.data;
+          document.getElementById("resultado").innerHTML = `
+            <h3>${post.title}</h3>
+            <p>${post.body}</p>
+          `;
+        })
+        .catch(function(error) {
+          console.error("Erro na requisição:", error);
+        });
+    }
+  </script>
+</body>
+</html>

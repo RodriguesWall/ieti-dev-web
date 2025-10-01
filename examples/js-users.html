@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo Axios - Usuários</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <h2>Lista de Usuários (Mock API)</h2>
+  <button onclick="buscarUsuarios()">Carregar Usuários</button>
+
+  <ul id="listaUsuarios"></ul>
+
+  <script>
+    function buscarUsuarios() {
+      // Endpoint de usuários do JSONPlaceholder
+      axios.get("https://jsonplaceholder.typicode.com/users")
+        .then(function(response) {
+          const usuarios = response.data;
+          const lista = document.getElementById("listaUsuarios");
+          lista.innerHTML = ""; // limpa antes de preencher
+
+          usuarios.forEach(usuario => {
+            lista.innerHTML += `
+              <li>
+                <strong>${usuario.name}</strong> <br>
+                Email: ${usuario.email} <br>
+                Cidade: ${usuario.address.city}
+              </li><hr>
+            `;
+          });
+        })
+        .catch(function(error) {
+          console.error("Erro ao buscar usuários:", error);
+        });
+    }
+  </script>
+</body>
+</html>

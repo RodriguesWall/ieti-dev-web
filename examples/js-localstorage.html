@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo LocalStorage</title>
+</head>
+<body>
+  <h2>Exemplo de LocalStorage</h2>
+
+  <input type="text" id="nomeInput" placeholder="Digite seu nome">
+  <button onclick="salvarNome()">Salvar</button>
+
+  <p id="mensagem"></p>
+
+  <script>
+    // Função para salvar no localStorage
+    function salvarNome() {
+      const nome = document.getElementById("nomeInput").value;
+      localStorage.setItem("cor", nome);
+      mostrarNome();
+    }
+
+    // Função para mostrar o nome salvo
+    function mostrarNome() {
+      const nome = localStorage.getItem("cor");
+      if (nome) {
+        document.getElementById("mensagem").innerText = "Olá, " + nome + "!";
+      }
+    }
+
+    // Quando a página carregar, mostrar se já existe algo salvo
+    window.onload = mostrarNome;
+  </script>
+</body>
+</html>
