@@ -1,25 +1,11 @@
-   // 1. Seleciona o formulário
-    const form = document.getElementById("myForm");
-    const aviso = document.getElementById("aviso");
+function loadComponent(id, file) {
+  fetch(file)
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById(id).innerHTML = data;
+      });
+  }
 
-    // 2. Escuta o evento de submit
-    form.addEventListener("submit", function(event) {
-      event.preventDefault(); // impede que a página recarregue
-
-      // 3. Captura os dados
-      const nome = form.nome.value;
-
-      // Atualiza o texto do aviso
-      aviso.textContent = `Obrigado, ${nome}! Seu formulário foi enviado.`;
-
-      // Exibe o aviso
-      aviso.classList.add("show");
-
-      // Esconde automaticamente depois de 3s
-      setTimeout(() => {
-        aviso.classList.remove("show");
-      }, 3000);
-
-      // Limpa o formulário
-      form.reset();
-    });
+// Carrega a navbar de um arquivo externo
+loadComponent("navbar", "componentes/navbar.html");
+loadComponent("footer", "componentes/footer.html");

@@ -16,3 +16,8 @@
 .aviso.show {
   opacity: 1;                  /* Torna o aviso visível */
 }
+
+.background{
+  max-height: 200px;
+  width: 100%;
+}
