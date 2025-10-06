@@ -29,7 +29,23 @@
   <main class="container my-5">
     <h1 class="text-center mb-4">Login</h1>
 
-   
+     <!-- Campo: Email -->
+     <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+
+      <!-- Campo: Email -->
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+      </div>
+
+    <!-- Botão de envio -->
+    <div class="text-center">
+      <button onclick="login()" type="button" class="btn btn-primary">Cadastrar</button>
+    </div>
+    
   </main>
 
   <!-- ---------- RODAPÉ ---------- -->
@@ -43,5 +59,7 @@
 
   <!-- Arquivo JavaScript personalizado (onde você pode validar o formulário, por exemplo) -->
   <script src="script.js"></script>
+  <script src="users.js"></script>
+
 </body>
 </html>

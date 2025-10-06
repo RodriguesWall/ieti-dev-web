@@ -6,7 +6,7 @@
     <meta name="description" content="Formulário de cadastro na plataforma de desenvolvimento web. Inscreva-se e escolha sua área de interesse."> <!-- Descrição para SEO -->
     <meta name="keywords" content="cadastro, plataforma, desenvolvimento web, frontend, backend, fullstack"> <!-- Palavras-chave para SEO -->    
     <title>Formulário de Cadastro</title>
-    <script src="verifica.js"></script> <!-- Importando o script verifica.js  para validar user logados -->
+    <script src="verifica-admin.js"></script>
     <!-- Importando o CSS do Bootstrap (framework que facilita a criação de layouts responsivos e estilizados) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Link para um CSS externo personalizado -->
@@ -25,21 +25,18 @@
 
   <!-- ---------- CONTEÚDO PRINCIPAL ---------- -->
   <main class="container my-5">
-    <h1 class="text-center mb-4">Pagina Inicial</h1>
-    <h3 class="text-center mb-4" id="welcome"></h3>
-
-    <table id="userTable" style="display: none;">
+    <h1 class="text-center mb-4">Dashboard</h1>
+    <table id="userTable">
       <thead>
         <tr>
           <th>ID</th>
-          <th>Tarefa</th>
-          <th>Data</th>
-          <th>Descrição</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Permissoes</th>
         </tr>
       </thead>
       <tbody id="userTableBody">
 
-        
       </tbody>
     </table>
 
@@ -57,6 +54,6 @@
 
   <!-- Arquivo JavaScript personalizado (onde você pode validar o formulário, por exemplo) -->
   <script src="script.js"></script>
-  <script src="task.js"></script>
+  <script src="admin.js"></script>
 </body>
 </html>

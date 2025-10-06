@@ -27,7 +27,7 @@
 
   <!-- ---------- CONTEÚDO PRINCIPAL ---------- -->
   <main class="container my-5">
-    <h1 class="text-center mb-4">Formulário de Cadastro - Editei</h1>
+    <h1 class="text-center mb-4">Formulário de Cadastro</h1>
 
     <!-- Formulário centralizado e limitado a 600px de largura -->
     <form class="mx-auto" style="max-width: 600px;" id="myForm">
@@ -38,41 +38,21 @@
         <input type="text" class="form-control" id="nome" name="nome" required>
       </div>
 
-      <!-- Campo: Telemóvel -->
-      <div class="mb-3">
-        <label for="telemovel" class="form-label">Telemóvel</label>
-        <input type="tel" class="form-control" id="telemovel" name="telemovel" 
-               pattern="[0-9]{9}" placeholder="912345678" required>
-        <div class="form-text">Digite apenas 9 dígitos.</div>
-      </div>
-
       <!-- Campo: Email -->
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
         <input type="email" class="form-control" id="email" name="email" required>
       </div>
 
-      <!-- Campo: Data de nascimento -->
-      <div class="mb-3">
-        <label for="nascimento" class="form-label">Data de nascimento</label>
-        <input type="date" class="form-control" id="nascimento" name="nascimento" required>
-      </div>
-
-      <!-- Campo: Select (Área de interesse) -->
-      <div class="mb-3">
-        <label for="area" class="form-label">Área de interesse</label>
-        <select id="area" name="area" class="form-select" required>
-          <option value="">-- Selecione --</option>
-          <option value="frontend">Frontend</option>
-          <option value="backend">Backend</option>
-          <option value="design">Design</option>
-          <option value="fullstack">Fullstack</option>
-        </select>
-      </div>
+        <!-- Campo: Email -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" required>
+        </div>
 
       <!-- Botão de envio -->
       <div class="text-center">
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <button onclick="cadastrar()" type="button" class="btn btn-primary">Login</button>
       </div>
     </form>
   </main>
@@ -88,5 +68,6 @@
 
   <!-- Arquivo JavaScript personalizado (onde você pode validar o formulário, por exemplo) -->
   <script src="script.js"></script>
+  <script src="users.js"></script>
 </body>
 </html>
