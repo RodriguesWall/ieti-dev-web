@@ -23,15 +23,14 @@ async function cadastrar() {
         if(data.id){
             localStorage.setItem("user", data.id); // salvando o user no localStorage
             localStorage.setItem("nome", data.nome);
-            localStorage.setItem("curso", data.curso)
 
             window.location.href = "index.html"; // redirecionando para index
         }else{
-            alert("Erro ao cadastrar usuário: " + data.message);
+            showError(`Error ao fazer cadastrar do usuário:` + data.message)
         }
 
     } catch (error) {
-      alert("Erro ao cadastrar usuário: " + error.message);
+       showError(`Error ao fazer cadastrar do usuário:` + error.message)
     }
 }
 
@@ -52,22 +51,35 @@ async function  login() {
         const data = await response.json();
         if(response.ok){
             const user = data[0];
-            console.log(user);
+           
             localStorage.setItem("user", user.id);
             localStorage.setItem("nome", user.nome);
             localStorage.setItem("permissions", user.permissions);
-            localStorage.setItem("curso", user.curso)
 
             window.location.href = "index.html";
         }else{
-            alert("Erro ao fazer login: " + response.message);
+            showError(`Error ao fazer Login`)
         }
-
     } catch (error) {
-        alert("Erro ao fazer login: " + error.message);
+          showError(`Error ao fazer Login: ${error}`)
     }
 }
 
+function showError(error) {
+    // const modalOverlay = document.getElementById("modalOverlay")
+    // modalOverlay.style.display = "flex";
+
+    // setTimeout(() => {
+    //     modalOverlay.style.display = "none";
+    // }, "3000");
+    Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: error,
+        showConfirmButton: false,
+        timer: 3000
+    });
+}
 
 function cripto(password) {
     const newpassword = btoa(password)

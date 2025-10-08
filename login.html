@@ -13,6 +13,8 @@
 
     <!-- Link para um CSS externo personalizado -->
     <link href="styles.css"  rel="stylesheet">
+    <!-- Importa SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -47,10 +49,15 @@
     </div>
     
   </main>
-
   <!-- ---------- RODAPÉ ---------- -->
   <div id="footer"></div>
-  
+    <div id="modalOverlay" class="overlayCustom">
+      <div class="modalCustom">
+          <span id="text-error">
+            Erro ao fazer login
+          </span>
+      </div>
+    </div>
   <!-- Mensagem de aviso (pode ser estilizada no CSS ou exibida via JavaScript) -->
   <div id="aviso" class="aviso">Formulário enviado com sucesso!</div>
 

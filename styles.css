@@ -53,3 +53,39 @@
     tbody tr:last-child td {
       border-bottom: none;
     }
+
+
+
+ /* ======== MODAL ======== */
+ .overlayCustom {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 100
+ }
+
+ .modalCustom{
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 80%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+ }
+
+ .modalCustom span{
+  font-size: 20px;
+  color: red;
+ }
+
+
+ .filter-group{
+  margin: 10px;
+ }
+
+ .add-task{
+  display: flex;
+  justify-content: flex-end;
+ }
