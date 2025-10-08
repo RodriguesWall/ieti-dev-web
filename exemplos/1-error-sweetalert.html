@@ -1,0 +1,18 @@
+<!-- Importar a lib SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+  // Exemplo de alerta de erro
+  function mostrarErro() {
+    Swal.fire({
+      icon: 'error',
+      title: 'Ops...',
+      text: 'Algo deu errado! Tente novamente mais tarde.',
+      confirmButtonText: 'Entendido',
+      confirmButtonColor: '#d33',
+    });
+  }
+
+  // Chamando o alerta
+  mostrarErro();
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modal com SweetAlert2</title>
+<!-- Importa SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<button id="editUser">Editar Usuário</button>
+
+<script>
+  const user = { id: 1, nome: "Wallace", email: "wallace@dev.com" };
+
+  document.getElementById("editUser").addEventListener("click", () => {
+    Swal.fire({
+      title: 'Editar Usuário',
+      html: `
+        <input id="swal-nome" class="swal2-input" placeholder="Nome" value="${user.nome}">
+        <input id="swal-email" class="swal2-input" placeholder="Email" value="${user.email}">
+      `,
+      showCancelButton: true,
+      confirmButtonText: 'Salvar',
+      cancelButtonText: 'Cancelar',
+      preConfirm: () => {
+        const nome = document.getElementById('swal-nome').value;
+        const email = document.getElementById('swal-email').value;
+
+        if (!nome || !email) {
+          Swal.showValidationMessage('Preencha todos os campos!');
+          return false;
+        }
+
+        return { nome, email };
+      }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire('Sucesso!', 'Dados salvos com sucesso!', 'success');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
