@@ -1,0 +1,49 @@
+/* Container principal */
+.dashboard {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 30px auto;
+  max-width: 900px;
+}
+
+/* Estilo base dos cards */
+.card {
+  flex: 1 1 250px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.card p {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Cores específicas de cada card */
+.total {
+  border-top: 4px solid #007bff;
+}
+.concluida {
+  border-top: 4px solid #28a745;
+}
+.pendente {
+  border-top: 4px solid #ffc107;
+}

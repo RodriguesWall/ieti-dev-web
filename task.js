@@ -1,10 +1,15 @@
-async function list_task(status) {
+let PAGE_ATUAL = 1;
+let PAGE_LIMIT = 20;
+
+async function list_task(status, page) {
     const user_id = localStorage.getItem("user");
     let URL = "https://68e40e2c8e116898997ade08.mockapi.io/tasks?user_id="+user_id;
 
     if(status){
         URL = URL+"&status="+status;
     } 
+
+    URL = URL+"&limit="+PAGE_LIMIT+"&page="+page;
 
     try {
         const response = await fetch(URL, {
@@ -13,17 +18,16 @@ async function list_task(status) {
                 "Content-Type": "application/json"
             }
         })
-
         const data = await response.json();
 
-        if(response.ok){
+        if(response.ok && data.length != 0){
             const tabela = document.getElementById("userTable");
             tabela.style.display = "table";
 
             const userTableBody = document.getElementById("userTableBody");
             userTableBody.innerHTML = ``;
 
-            for (tarefa of data){
+            for (let tarefa of data){
                 const linha = document.createElement("tr");
                
                 linha.innerHTML = `
@@ -44,12 +48,33 @@ async function list_task(status) {
 
                 userTableBody.appendChild(linha);
             }
+
+            const total = data.length;
+            const concluido = (data.filter((task) => task.status === "Concluido")).length;
+            const pendente = (data.filter((task) => task.status === "Pendente")).length;
+            console.log("Concluido", concluido)
+            document.getElementById("actualPage").textContent = `Pagina ${page}`
+            document.getElementById("total").textContent = total
+            document.getElementById("concluido").textContent = concluido
+            document.getElementById("pendente").textContent = pendente
         }
 
     } catch (error) {
         alert("Erro ao buscar tarefas: " + error.message);
     }
 
+}
+
+function pageAnterior() {
+    if(PAGE_ATUAL > 1){
+        PAGE_ATUAL = PAGE_ATUAL -1;
+        list_task(false, PAGE_ATUAL)
+    }
+}
+
+function proximaPage() {
+    PAGE_ATUAL++;
+    list_task(false, PAGE_ATUAL)
 }
 
 async function concluirTask(taskId) {
@@ -103,7 +128,7 @@ async function excluirTask(taskId) {
     });
 }
 
-list_task();
+list_task(false, PAGE_ATUAL);
 
 async function saveTask(dados) {
     try {

@@ -1,0 +1,12 @@
+#userTable thead{
+    width: 100%;
+    table-layout: fixed;
+    display: table;
+}
+
+#userTable tbody{
+    width: 100%;
+    max-height: 250px;
+    overflow-y: auto;
+    display: block;
+}

@@ -56,6 +56,7 @@
 
 
 
+
  /* ======== MODAL ======== */
  .overlayCustom {
   display: none;
@@ -89,3 +90,16 @@
   display: flex;
   justify-content: flex-end;
  }
+
+ .body-project{
+  margin-left: 12%;
+  margin-right: 12%;
+  margin-top: 5%;
+ }
+
+ #footer{
+  margin-top: 100px !important;
+ }
+
+
+ 

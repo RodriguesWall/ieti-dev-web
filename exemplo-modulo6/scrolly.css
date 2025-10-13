@@ -1,0 +1,18 @@
+/* 🔹 Mantém cabeçalho fixo e adiciona rolagem vertical 
+userTable id da table
+*/
+#userTable thead {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+#userTable tbody {
+  display: block;
+  max-height: 300px; /* Limite de altura */
+  overflow-y: auto;  /* Scroll vertical */
+  width: 100%;
+}
+
+
+
